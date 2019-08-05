@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
-namespace testLists
+namespace TextFormatter
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
