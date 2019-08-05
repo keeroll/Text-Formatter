@@ -1,0 +1,217 @@
+﻿<Window x:Name="___No_Name_" x:Class="testLists.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Height="700" Width="1280" WindowStartupLocation="CenterScreen" Icon="Recourses/main.ico"
+        MinHeight="700" MinWidth="1280">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="220*"/>
+            <ColumnDefinition Width="220*"/>
+            <ColumnDefinition Width="240*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnOpenFileOne" Content="Открыть файл 1" Margin="16,15,0,0" Click="btnOpenFileOne_Click" HorizontalAlignment="Left" Width="130" Height="20" VerticalAlignment="Top"/>
+            <Label Grid.Row="0" Content="Кол-во символов:" Margin="16,55,0,69" HorizontalAlignment="Left" Width="108"/>
+            <Label Grid.Row="0" Content="Кол-во пробелов:" Margin="16,78,0,46" HorizontalAlignment="Left" Width="108"/>
+            <Label Grid.Row="0" Content="Кол-во слов:" Margin="16,101,0,23" HorizontalAlignment="Left" Width="81"/>
+            <Label Grid.Row="0" Content="Кол-во фраз:" Margin="16,124,0,0" HorizontalAlignment="Left" Width="81"/>
+            <Label Grid.Row="0" x:Name="lbCharsFileOne" Content="0" HorizontalAlignment="Left" Margin="124,55,0,0" VerticalAlignment="Top"/>
+            <Label Grid.Row="0" x:Name="lbSpacesFileOne" Content="0" HorizontalAlignment="Left" Margin="124,78,0,0" VerticalAlignment="Top"/>
+            <Label Grid.Row="0" x:Name="lbWordsFileOne" Content="0" HorizontalAlignment="Left" Margin="124,101,0,0" VerticalAlignment="Top"/>
+            <Label Grid.Row="0" x:Name="lbPhrasesFileOne" Content="0" HorizontalAlignment="Left" Margin="124,124,0,0" VerticalAlignment="Top"/>
+            <TextBox Grid.Row="1" x:Name="tbFileOne" Margin="16,5,11,10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="tbFileOne_TextChanged"/>
+            <RadioButton Grid.Row="2" x:Name="rbNewLineFOne" GroupName ="FileOne" Content="Новая строка" Margin="16,0,0,172" Checked="rbNewLineFOne_Checked" HorizontalAlignment="Left" Width="93" Height="15" VerticalAlignment="Bottom"/>
+            <RadioButton Grid.Row="2" x:Name="rbTabFOne" GroupName ="FileOne" Content="Табуляция" Margin="16,0,0,150" Checked="rbTabFOne_Checked" HorizontalAlignment="Left" Width="77" Height="15" VerticalAlignment="Bottom"/>
+            <RadioButton Grid.Row="2" x:Name="rbSpecCharFOne" GroupName ="FileOne" Content="Спец. символ" Margin="16,0,0,129" Checked="rbSpecCharFOne_Checked" HorizontalAlignment="Left" Width="93" Height="15" VerticalAlignment="Bottom"/>
+            <TextBox Grid.Row="2" x:Name="tbCustomSplitterFileOne" Margin="21,63,0,99" TextWrapping="Wrap" Text="," HorizontalAlignment="Left" Width="99" TextChanged="tbCustomSplitterFileOne_TextChanged"/>
+            <Button Grid.Row="2" x:Name="btnAboutApp" Content="О программе" Margin="21,0,0,24" Click="btnAboutApp_Click" HorizontalAlignment="Left" Width="99" Height="20" VerticalAlignment="Bottom"/>
+            <Button Grid.Row="2" x:Name="btnClearResults" Content="Очистить результат" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom" Width="125" Height="25" Click="btnClearResults_Click"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row ="0" x:Name="btnOpenFileTwo" Content="Открыть файл 2" Margin="7,15,0,0" VerticalAlignment="Top" Click="btnOpenFileTwo_Click" HorizontalAlignment="Left" Width="136"/>
+            <Label Grid.Row ="0" Content="Кол-во символов:" HorizontalAlignment="Left" Margin="7,55,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" Content="Кол-во пробелов:" HorizontalAlignment="Left" Margin="7,78,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" Content="Кол-во слов:" HorizontalAlignment="Left" Margin="7,101,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" Content="Кол-во фраз:" HorizontalAlignment="Left" Margin="7,124,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" x:Name="lbCharsFileTwo" Content="0" HorizontalAlignment="Left" Margin="115,55,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" x:Name="lbSpacesFileTwo" Content="0" HorizontalAlignment="Left" Margin="115,78,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" x:Name="lbWordsFileTwo" Content="0" HorizontalAlignment="Left" Margin="115,101,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Grid.Row ="0" x:Name="lbPhrasesFileTwo" Content="0" HorizontalAlignment="Left" Margin="115,124,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <TextBox Grid.Row ="1" x:Name="tbFileTwo" Margin="8,5,14,10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="tbFileTwo_TextChanged"/>
+            <RadioButton Grid.Row ="2" x:Name="rbNewLineFTwo" GroupName ="FileTwo" Content="Новая строка" Margin="8,0,0,172" Checked="rbNewLineFTwo_Checked" HorizontalAlignment="Left" Width="93" Height="15" VerticalAlignment="Bottom"/>
+            <RadioButton Grid.Row ="2" x:Name="rbTabFTwo" GroupName ="FileTwo" Content="Табуляция" Margin="8,0,0,150" Checked="rbTabFTwo_Checked" HorizontalAlignment="Left" Width="77" Height="15" VerticalAlignment="Bottom"/>
+            <RadioButton Grid.Row ="2" x:Name="rbSpecCharFTwo" GroupName ="FileTwo" Content="Спец. символ" Margin="8,0,0,129" Checked="rbSpecCharFTwo_Checked" HorizontalAlignment="Left" Width="93" Height="15" VerticalAlignment="Bottom"/>
+            <TextBox Grid.Row ="2" x:Name="tbCustomSplitterFileTwo" Margin="13,0,0,99" TextWrapping="Wrap" Text="," HorizontalAlignment="Left" Width="102" Height="25" VerticalAlignment="Bottom" TextChanged="tbCustomSplitterFileTwo_TextChanged"/>
+            <Button Grid.Row="2" x:Name="btnGenerate" Content="Сгенерировать" Margin="13,103,0,0" VerticalAlignment="Top" Height="25" Click="btnGenerate_Click" HorizontalAlignment="Left" Width="102"/>
+            <CheckBox x:Name="cbTrimSpaces" Content="Убирать пробелы" HorizontalAlignment="Left" Margin="17,148,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="cbTrimSpaces_Checked" Unchecked="cbTrimSpaces_Unchecked" IsChecked="True"/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnSaveUniqAll" Content="Сохранить" Margin="12,15,0,0" VerticalAlignment="Top" Height="20" Click="btnSaveUniqAll_Click" HorizontalAlignment="Left" Width="80" Grid.Column="2"/>
+            <Label Grid.Row="0" Content="Кол-во символов:" HorizontalAlignment="Left" Margin="11,55,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" Content="Кол-во пробелов:" HorizontalAlignment="Left" Margin="11,78,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" Content="Кол-во слов:" HorizontalAlignment="Left" Margin="11,101,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" Content="Кол-во фраз:" HorizontalAlignment="Left" Margin="11,124,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" x:Name="lbCharsUniqAll" Content="0" HorizontalAlignment="Left" Margin="119,55,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" x:Name="lbSpacesUniqAll" Content="0" HorizontalAlignment="Left" Margin="119,78,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" x:Name="lbWordsUniqAll" Content="0" HorizontalAlignment="Left" Margin="119,101,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <Label Grid.Row="0" x:Name="lbPhrasesUniqAll" Content="0" HorizontalAlignment="Left" Margin="119,124,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBox Grid.Row="1" x:Name="tbUniqAll" Margin="10,5,5,198" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="tbUniqAll_TextChanged" Grid.RowSpan="2">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=checkbEditOne, Path=IsChecked}" Value="True">
+                                <Setter Property="IsReadOnly" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Label Grid.Row="2" Content="Все уникальные" HorizontalAlignment="Left" Margin="10,0,0,172" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="14" Grid.Column="2"/>
+            <CheckBox Grid.Row="2" x:Name="checkbEditOne" Content="Ред." Margin="174,0,0,178" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="51" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbNewLineUniqAll" GroupName ="UniqAll" Content="Новая строка" HorizontalAlignment="Left" Margin="10,0,0,150" VerticalAlignment="Bottom" Checked="rbNewLineUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbTabUniqAll" GroupName ="UniqAll" Content="Табуляция" HorizontalAlignment="Left" Margin="10,0,0,130" VerticalAlignment="Bottom" Checked="rbTabUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaUniqAll" GroupName ="UniqAll" Content="Запятая" HorizontalAlignment="Left" Margin="10,0,0,110" VerticalAlignment="Bottom" Checked="rbComaUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaNoSpaceUniqAll" GroupName ="UniqAll" Content="Запятая без пробела" HorizontalAlignment="Left" Margin="10,0,0,90" VerticalAlignment="Bottom" Checked="rbComaNoSpaceUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbSpaceUniqAll" GroupName ="UniqAll" Content="Пробел" HorizontalAlignment="Left" Margin="10,0,0,70" VerticalAlignment="Bottom" Checked="rbSpaceUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbFullTextUniqAll" GroupName ="UniqAll" Content="Полный текст (без пробела)" HorizontalAlignment="Left" Margin="10,0,0,50" VerticalAlignment="Bottom" Checked="rbFullTextUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedNewLineUniqAll" GroupName ="UniqAll" Content="В кавычках с новой строки" HorizontalAlignment="Left" Margin="10,0,0,30" VerticalAlignment="Bottom" Checked="rbQuotedNewLineUniqAll_Checked" Grid.Column="2"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedInLineUniqAll" GroupName ="UniqAll" Content="В кавычках подряд (с запятой)" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Checked="rbQuotedInLineUniqAll_Checked" Grid.Column="2"/>
+        </Grid>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnSaveRepeateAll" Content="Сохранить" Margin="2,15,0,0" VerticalAlignment="Top" Height="20" Click="btnSaveRepeateAll_Click" HorizontalAlignment="Left" Width="80" Grid.Column="3"/>
+            <Label Grid.Row="0" Content="Кол-во символов:" HorizontalAlignment="Left" Margin="1,55,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" Content="Кол-во пробелов:" HorizontalAlignment="Left" Margin="1,78,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" Content="Кол-во слов:" HorizontalAlignment="Left" Margin="1,101,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" Content="Кол-во фраз:" HorizontalAlignment="Left" Margin="1,124,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" x:Name="lbCharsRepeatAll" Content="0" HorizontalAlignment="Left" Margin="109,55,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" x:Name="lbSpacesRepeatAll" Content="0" HorizontalAlignment="Left" Margin="109,78,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" x:Name="lbWordsRepeatAll" Content="0" HorizontalAlignment="Left" Margin="109,101,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label Grid.Row="0" x:Name="lbPhrasesRepeatAll" Content="0" HorizontalAlignment="Left" Margin="109,124,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+            <TextBox Grid.Row="1" x:Name="tbRepeatAll" Margin="0,5,5,198" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="tbRepeatAll_TextChanged" Grid.RowSpan="2">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=checkbEditFour, Path=IsChecked}" Value="True">
+                                <Setter Property="IsReadOnly" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Label Grid.Row="2" Content="Все повторения" HorizontalAlignment="Left" Margin="0,0,0,172" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="14" Grid.Column="3"/>
+            <CheckBox Grid.Row="2" x:Name="checkbEditFour" Content="Ред." Margin="170,0,0,178" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="46" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbNewLineRepeatAll" GroupName ="RepeatAll" Content="Новая строка" HorizontalAlignment="Left" Margin="0,0,0,150" VerticalAlignment="Bottom" Checked="rbNewLineRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbTabRepeatAll" GroupName ="RepeatAll" Content="Табуляция" HorizontalAlignment="Left" Margin="0,0,0,130" VerticalAlignment="Bottom" Checked="rbTabRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaRepeatAll" GroupName ="RepeatAll" Content="Запятая" HorizontalAlignment="Left" Margin="0,0,0,110" VerticalAlignment="Bottom" Checked="rbComaRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaNoSpaceRepeatAll" GroupName ="RepeatAll" Content="Запятая без пробела" HorizontalAlignment="Left" Margin="0,0,0,90" VerticalAlignment="Bottom" Checked="rbComaNoSpaceRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbSpaceRepeatAll" GroupName ="RepeatAll" Content="Пробел" HorizontalAlignment="Left" Margin="0,0,0,70" VerticalAlignment="Bottom" Checked="rbSpaceRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbFullTextRepeatAll" GroupName ="RepeatAll" Content="Полный текст (без пробела)" HorizontalAlignment="Left" Margin="0,0,0,50" VerticalAlignment="Bottom" Checked="rbFullTextRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedNewLineRepeatAll" GroupName ="RepeatAll" Content="В кавычках с новой строки" HorizontalAlignment="Left" Margin="0,0,0,30" VerticalAlignment="Bottom" Checked="rbQuotedNewLineRepeatAll_Checked" Grid.Column="3"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedInLineRepeatAll" GroupName ="RepeatAll" Content="В кавычках подряд (с запятой)" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Bottom" Checked="rbQuotedInLineRepeatAll_Checked" Grid.Column="3"/>
+        </Grid>
+        <Grid Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnSaveUniqTwoInOne" Content="Сохранить" Margin="2,15,0,0" VerticalAlignment="Top" Height="20" Click="btnSaveUniqTwoInOne_Click" HorizontalAlignment="Left" Width="80" Grid.Column="4"/>
+            <Label Grid.Row="0" Content="Кол-во символов:" HorizontalAlignment="Left" Margin="1,55,0,0" VerticalAlignment="Top" Grid.Column="4" Height="26" Width="108"/>
+            <Label Grid.Row="0" Content="Кол-во пробелов:" HorizontalAlignment="Left" Margin="1,78,0,0" VerticalAlignment="Top" Grid.Column="4" Height="26" Width="108"/>
+            <Label Grid.Row="0" Content="Кол-во слов:" HorizontalAlignment="Left" Margin="1,101,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
+            <Label Grid.Row="0" Content="Кол-во фраз:" HorizontalAlignment="Left" Margin="1,124,0,0" VerticalAlignment="Top" Grid.Column="4" Height="26" Width="81"/>
+            <Label Grid.Row="0" x:Name="lbCharsUniqTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,55,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+            <Label Grid.Row="0" x:Name="lbSpacesUniqTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,78,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+            <Label Grid.Row="0" x:Name="lbWordsUniqTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,101,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+            <Label Grid.Row="0" x:Name="lbPhrasesUniqTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,124,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+            <TextBox Grid.Row="1" x:Name="tbUniqTwoInOne" Margin="1,5,3,198" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="tbUniqTwoInOne_TextChanged" Grid.RowSpan="2">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=checkbEditTwo, Path=IsChecked}" Value="True">
+                                <Setter Property="IsReadOnly" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Label Grid.Row="2" Content="Уникальные 2 в 1" HorizontalAlignment="Left" Margin="1,0,0,172" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="14" Grid.Column="4" Height="29" Width="131"/>
+            <CheckBox Grid.Row="2" x:Name="checkbEditTwo" Content="Ред." Margin="169,0,0,178" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="48" Grid.Column="4" Height="15"/>
+            <RadioButton Grid.Row="2" x:Name="rbNewLineUniqTwoInOne" GroupName ="UniqTwoInOne" Content="Новая строка" HorizontalAlignment="Left" Margin="1,0,0,150" VerticalAlignment="Bottom" Checked="rbNewLineUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="93"/>
+            <RadioButton Grid.Row="2" x:Name="rbTabUniqTwoInOne" GroupName ="UniqTwoInOne" Content="Табуляция" HorizontalAlignment="Left" Margin="1,0,0,130" VerticalAlignment="Bottom" Checked="rbTabUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="77"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaUniqTwoInOne" GroupName ="UniqTwoInOne" Content="Запятая" HorizontalAlignment="Left" Margin="1,0,0,110" VerticalAlignment="Bottom" Checked="rbComaUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="62"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaNoSpaceUniqTwoInOne" GroupName ="UniqTwoInOne" Content="Запятая без пробела" HorizontalAlignment="Left" Margin="1,0,0,90" VerticalAlignment="Bottom" Checked="rbComaNoSpaceUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="133"/>
+            <RadioButton Grid.Row="2" x:Name="rbSpaceUniqTwoInOne" GroupName ="UniqTwoInOne" Content="Пробел" HorizontalAlignment="Left" Margin="1,0,0,70" VerticalAlignment="Bottom" Checked="rbSpaceUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="61"/>
+            <RadioButton Grid.Row="2" x:Name="rbFullTextUniqTwoInOne" GroupName ="UniqTwoInOne" Content="Полный текст (без пробела)" HorizontalAlignment="Left" Margin="1,0,0,50" VerticalAlignment="Bottom" Checked="rbFullTextUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="173"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedNewLineUniqTwoInOne" GroupName ="UniqTwoInOne" Content="В кавычках с новой строки" HorizontalAlignment="Left" Margin="1,0,0,30" VerticalAlignment="Bottom" Checked="rbQuotedNewLineUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="168"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedInLineUniqTwoInOne" GroupName ="UniqTwoInOne" Content="В кавычках подряд (с запятой)" HorizontalAlignment="Left" Margin="1,0,0,10" VerticalAlignment="Bottom" Checked="rbQuotedInLineUniqTwoInOne_Checked" Grid.Column="4" Height="15" Width="187"/>
+        </Grid>
+        <Grid Grid.Column="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnSaveRepeatTwoInOne" Content="Сохранить" Margin="2,15,0,0" VerticalAlignment="Top" Height="20" Click="btnSaveRepeatTwoInOne_Click" HorizontalAlignment="Left" Width="80" Grid.Column="5"/>
+            <Label Grid.Row="0" Content="Кол-во символов:" HorizontalAlignment="Left" Margin="1,55,0,0" VerticalAlignment="Top" Grid.Column="5" Height="26" Width="108"/>
+            <Label Grid.Row="0" Content="Кол-во пробелов:" HorizontalAlignment="Left" Margin="1,78,0,0" VerticalAlignment="Top" Grid.Column="5" Height="26" Width="108"/>
+            <Label Grid.Row="0" Content="Кол-во слов:" HorizontalAlignment="Left" Margin="1,101,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
+            <Label Grid.Row="0" Content="Кол-во фраз:" HorizontalAlignment="Left" Margin="1,124,0,0" VerticalAlignment="Top" Grid.Column="5" Height="26" Width="81"/>
+            <Label Grid.Row="0" x:Name="lbCharsRepeatTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,55,0,0" VerticalAlignment="Top"/>
+            <Label Grid.Row="0" x:Name="lbSpacesRepeatTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,78,0,0" VerticalAlignment="Top" Grid.Column="5"/>
+            <Label Grid.Row="0" x:Name="lbWordsRepeatTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,101,0,0" VerticalAlignment="Top" Grid.Column="5"/>
+            <Label Grid.Row="0" x:Name="lbPhrasesRepeatTwoInOne" Content="0" HorizontalAlignment="Left" Margin="109,124,0,0" VerticalAlignment="Top" Grid.Column="5"/>
+            <TextBox Grid.Row="1" x:Name="tbRepeatTwoInOne" Margin="2,5,22,198" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TextChanged="tbRepeatTwoInOne_TextChanged" Grid.RowSpan="2">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=checkbEditThree, Path=IsChecked}" Value="True">
+                                <Setter Property="IsReadOnly" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Label Grid.Row="2" Content="Повторения 2 в 1" HorizontalAlignment="Left" Margin="2,0,0,172" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="14" Grid.Column="5" Height="29" Width="129"/>
+            <CheckBox Grid.Row="2" x:Name="checkbEditThree" Content="Ред." Margin="170,0,0,178" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="48" Grid.Column="5" Height="15"/>
+            <RadioButton Grid.Row="2" x:Name="rbNewLineRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="Новая строка" HorizontalAlignment="Left" Margin="2,0,0,150" Checked="rbNewLineRepeatTwoInOne_Checked" Height="15" VerticalAlignment="Bottom" Grid.Column="5" Width="93"/>
+            <RadioButton Grid.Row="2" x:Name="rbTabRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="Табуляция" HorizontalAlignment="Left" Margin="2,0,0,130" VerticalAlignment="Bottom" Checked="rbTabRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="77"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="Запятая" HorizontalAlignment="Left" Margin="2,0,0,110" VerticalAlignment="Bottom" Checked="rbComaRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="62"/>
+            <RadioButton Grid.Row="2" x:Name="rbComaNoSpaceRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="Запятая без пробела" HorizontalAlignment="Left" Margin="2,0,0,90" VerticalAlignment="Bottom" Checked="rbComaNoSpaceRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="133"/>
+            <RadioButton Grid.Row="2" x:Name="rbSpaceRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="Пробел" HorizontalAlignment="Left" Margin="2,0,0,70" VerticalAlignment="Bottom" Checked="rbSpaceRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="61"/>
+            <RadioButton Grid.Row="2" x:Name="rbFullTextRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="Полный текст (без пробела)" HorizontalAlignment="Left" Margin="2,0,0,50" VerticalAlignment="Bottom" Checked="rbFullTextRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="173"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedNewLineRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="В кавычках с новой строки" HorizontalAlignment="Left" Margin="2,0,0,30" VerticalAlignment="Bottom" Checked="rbQuotedNewLineRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="168"/>
+            <RadioButton Grid.Row="2" x:Name="rbQuotedInLineRepeatTwoInOne" GroupName ="RepeatTwoInOne" Content="В кавычках подряд (с запятой)" HorizontalAlignment="Left" Margin="2,0,0,10" VerticalAlignment="Bottom" Checked="rbQuotedInLineRepeatTwoInOne_Checked" Grid.Column="5" Height="15" Width="187"/>
+        </Grid>
+    </Grid>
+</Window>
